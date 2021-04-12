@@ -31,7 +31,7 @@ error-m(){
     echo -e "${red}-----------------------------${reset}"
 }
 
-
+# git push 
 git-rest(){
     git commit -m $1
     git push
