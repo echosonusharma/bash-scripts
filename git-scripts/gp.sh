@@ -15,6 +15,7 @@ gh-help(){
 # will be usefull in the future 
 cat << _EOF_ 
     it's just a script to push to github
+    needs a lot of work!
 _EOF_
 }
 
@@ -49,38 +50,38 @@ fi
 echo -e "${blue}started pusing all files to github...${reset}"
 git add .
 
-PS3='pls add a custom commit message or select one - '
-commit=(":tada: initial commit" ":fire: refactoring code" ":boom: crash fixes" ":sparkles: ui changes" "Quit")
+PS3='Pls add a custom commit message or select one - '
+commit=("initial-commit:tada:" "refactoring-code:fire:" "crash-fixes:boom:" "ui-changes:sparkles:" "Quit")
 select option in "${commit[@]}"
 do
     case $option in
-        ":tada: initial commit")
-            git-rest ${commit[$1]}
+        "initial-commit:tada:")
+            git-rest ${commit[0]}
             break
             ;;
-        ":fire: refactoring code")
-            git-rest ${commit[$2]}
+        "refactoring-code:fire:")
+            git-rest ${commit[1]}
             break
             ;;
-        ":boom: crash fixes")
-            git-rest ${commit[$3]}
+        "crash-fixes:boom:")
+            git-rest ${commit[2]}
             break
             ;;
-        ":sparkles: ui changes")
-            git-rest ${commit[$4]}
+        "ui-changes:sparkles:")
+            git-rest ${commit[3]}
             break
             ;;
         "Quit")
             break
             ;;
-        *) 
+        *)
         # Check for Space
         if [[ $REPLY =~ \ + ]]; then
             error-m
             exit 1
         # Check if input is NULL (probably don't need one )
         elif [[ -z "$REPLY" ]]; then
-            echo -e "${red}--input-is-NULL--${reset}"   
+            echo -e "${red}--INPUT-IS-NULL--${reset}"   
             exit 1 
         else
            git-rest $REPLY
