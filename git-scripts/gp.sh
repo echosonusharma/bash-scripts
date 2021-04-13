@@ -23,15 +23,14 @@ reset="\e[0m"
 gh-help(){
 # will be usefull in the future 
 cat << _EOF_ 
-    it's just a script to push to github
-    needs a lot of work!
+    It's just a script to push to github!
 _EOF_
 }
 
 leave(){
-    echo -e "${green}----------------------${reset}"
-    echo -e "${green}--PUSHED-TO-GITHUB-!--${reset}"
-    echo -e "${green}----------------------${reset}"
+    echo -e "${green}-------------------------${reset}"
+    echo -e "${green}--PUBLISHED-TO-GITHUB-!--${reset}"
+    echo -e "${green}-------------------------${reset}"
 }
 
 # -e his tells echo to enable interpretation of escapes so that the color codes work
