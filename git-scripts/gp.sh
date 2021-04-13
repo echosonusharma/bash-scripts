@@ -7,6 +7,10 @@
 # - this dosen't check if the current dir has a .git file in it
 # - no logic present to handle if every thing is up-to-date in git
 
+
+# issues
+# space handling is a issue
+  
 # Ansi color code variables
 red="\e[0;91m"
 blue="\e[0;94m"
