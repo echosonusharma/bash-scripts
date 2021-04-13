@@ -3,14 +3,14 @@
 # simple bash script to get rid of repetitive commands of git push
 
 # future fixes
-# - this dosen't check if git is in the system
-# - this dosen't check if the current dir has a .git file in it
+# - dosen't checks if git is in the system
+# - dosen't checks if the current dir has a .git file in it
 # - no logic present to handle if every thing is up-to-date in git
 
 
 # issues
-# space handling is a issue
-  
+# space handling
+
 # Ansi color code variables
 red="\e[0;91m"
 blue="\e[0;94m"
