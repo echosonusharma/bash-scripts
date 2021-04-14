@@ -11,7 +11,7 @@ do
     echo "$line"
 done < "${1:- /dev/stdin}"
 
-
+# stdout
 # passing results to a file
 # only works if the theres no err 
 ls -al > ls.txt
@@ -22,6 +22,5 @@ ls -al 1>ls.txt 2>err.txt
 #
 ls -al >& ls.txt
 
-# stdout
 # same file has both err and output
 ls -al 1>out.txt 2>&1
