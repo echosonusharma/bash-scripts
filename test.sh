@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo "select and run asdasd"
+echo "select and run"
 
 exit
 
