@@ -22,5 +22,5 @@ ls -al 1>ls.txt 2>err.txt
 #
 ls -al >& ls.txt
 
-# same file has both err and output
+# same file will contain both err and output
 ls -al 1>out.txt 2>&1
