@@ -7,8 +7,6 @@
 # - dosen't checks if the current dir has a .git file in it
 # - no logic present to handle if every thing is up-to-date in git
 
-
-
 # Ansi color code variables
 red="\e[0;91m"
 blue="\e[0;94m"
@@ -40,7 +38,7 @@ error-m(){
 
 
 git-rest(){
-    git commit -m $1
+    git commit -m "${1}"
     git push
     leave
 
@@ -56,41 +54,42 @@ fi
 echo -e "${blue}started pusing all files to github...${reset}"
 git add .
 
-PS3='Pls add a custom commit message or select one - '
-commit=("initial-commit:tada:" "refactoring-code:fire:" "crash-fixes:boom:" "ui-changes:sparkles:" "Quit")
+PS3='pls add a custom commit message or select one - '
+commit=("initial commit :tada:" "refactoring code :fire:" "crash fixes :boom:" "ui changes :sparkles:" "code added" "Quit")
 select option in "${commit[@]}"
 do
     case $option in
-        "initial-commit:tada:")
-            git-rest ${commit[0]}
+        "initial commit :tada:") 
+            git-rest "${commit[0]}"
+            echo -e "${white}${bold}${commit[0]}${reset}"
             break
             ;;
-        "refactoring-code:fire:")
-            git-rest ${commit[1]}
+        "refactoring code :fire:")
+            git-rest "${commit[1]}"
             break
             ;;
-        "crash-fixes:boom:")
-            git-rest ${commit[2]}
+        "crash fixes :boom:")
+            git-rest "${commit[2]}"
             break
             ;;
-        "ui-changes:sparkles:")
-            git-rest ${commit[3]}
+        "ui changes :sparkles:")
+            git-rest "${commit[3]}"
+            break
+            ;;
+        "code added")
+            git-rest "${commit[4]}"
             break
             ;;
         "Quit")
             break
             ;;
-        *)
+        *) 
         # Check for Space
-        if [[ $REPLY =~ \ + ]]; then
+        if [ -z $REPLY ]; then
             error-m
             exit 1
-        # Check if input is NULL (probably don't need one )
-        elif [[ -z "$REPLY" ]]; then
-            echo -e "${red}--INPUT-IS-NULL--${reset}"   
-            exit 1 
         else
-           git-rest $REPLY
+           git-rest "${REPLY}"
         fi
         ;;
     esac
