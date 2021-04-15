@@ -8,8 +8,6 @@
 # - no logic present to handle if every thing is up-to-date in git
 
 
-# issues
-# space handling
 
 # Ansi color code variables
 red="\e[0;91m"
