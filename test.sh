@@ -1,8 +1,8 @@
 #! /bin/bash
 
-echo "select and run"
+echo "this script is not to be executed !"
 
-exit
+exit 1
 
 # read with stdin
 # pass a file location and it will read it for you
