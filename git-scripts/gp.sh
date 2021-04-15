@@ -25,14 +25,14 @@ _EOF_
 
 leave(){
     echo -e "${green}-------------------------${reset}"
-    echo -e "${green}--PUBLISHED-TO-GITHUB-!--${reset}"
+    echo -e "${green}${bold}--PUBLISHED-TO-GITHUB-!--${reset}"
     echo -e "${green}-------------------------${reset}"
 }
 
 # -e his tells echo to enable interpretation of escapes so that the color codes work
 error-m(){
     echo -e "${red}-----------------------------${reset}"
-    echo -e "${red}--COMMIT-MESSAGE-IS-EMPTY-!--${reset}"
+    echo -e "${red}${bold}--COMMIT-MESSAGE-IS-EMPTY-!--${reset}"
     echo -e "${red}-----------------------------${reset}"
 }
 
@@ -61,7 +61,6 @@ do
     case $option in
         "initial commit :tada:") 
             git-rest "${commit[0]}"
-            echo -e "${white}${bold}${commit[0]}${reset}"
             break
             ;;
         "refactoring code :fire:")
@@ -84,7 +83,7 @@ do
             break
             ;;
         *) 
-        # Check for Space
+        # Check for null
         if [ -z $REPLY ]; then
             error-m
             exit 1
