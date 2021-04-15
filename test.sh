@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo "select and runasdaas"
+echo "select and run"
 
 exit
 
