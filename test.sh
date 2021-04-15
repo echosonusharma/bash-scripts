@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo "select and run"
+echo "select and run !"
 
 exit
 
