@@ -1,2 +1,3 @@
-# bash-scripts
-bash-scripts
+## Bash Scripts
+
+some generic bash files and scripts
