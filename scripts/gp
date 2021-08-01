@@ -1,0 +1,86 @@
+#!/bin/bash
+
+# Ansi color code variables
+red="\e[0;91m"
+blue="\e[0;94m"
+green="\e[0;92m"
+white="\e[0;97m"
+yellow="\e[0;33m"
+bold="\e[1m"
+uline="\e[4m"
+reset="\e[0m"
+cyan="\e[0;36m"
+
+gp-help(){
+    echo "The script pushes all your added/untracked files to any hosted version of Git!"
+}
+
+# -e his tells echo to enable interpretation of escapes so that the color codes work
+published(){
+    echo -e "${green}-------------${reset}"
+    echo -e "${green}${bold}  Published  ${reset}"
+    echo -e "${green}-------------${reset}"
+}
+
+empty-msg-error(){
+    echo -e "${red}---------------------------------${reset}"
+    echo -e "${red}${bold}  Commit Message Can't Be Empty  ${reset}"
+    echo -e "${red}---------------------------------${reset}"
+}
+
+no-git(){
+    echo -e "${red}------------------------------------${reset}"
+    echo -e "${red}${bold}  Folder Isn't Initialized with Git ${reset}"
+    echo -e "${red}------------------------------------${reset}"
+}
+
+adding-files(){
+    echo -e "${yellow}-----------------------------${reset}"
+    echo -e "${yellow} Started adding all files... ${reset}"
+    echo -e "${yellow}-----------------------------${reset}"
+}
+
+git-clean(){
+    echo -e "${cyan}-------------------${reset}"
+    echo -e "${cyan} Repository Clean  ${reset}"
+    echo -e "${cyan}-------------------${reset}"
+}
+
+
+git-publish(){
+    echo -e "${yellow}-- Git Status --${reset}"
+    git status
+    adding-files
+    git add .
+    git commit -m "$1"
+    git push
+    published
+
+    exit
+}
+
+if [ "$1" == "--help" ]; then
+    gp-help
+    exit
+fi
+
+
+if git rev-parse --git-dir > /dev/null 2>&1; then
+
+    if [ $# -eq 0 ]; then
+        empty-msg-error
+        exit 1
+    fi
+
+    if [ -z "$(git status --short)" ]; then
+       git-clean
+    else
+      message="'$*'"
+      git-publish "$message"
+    exit
+    fi 
+
+else
+    no-git 
+    exit 1
+fi
