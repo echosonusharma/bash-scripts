@@ -33,23 +33,6 @@ count=10
 
 echo ${count} #to use the variable
 
-
-
-# taking arguments from input 
-
-# it goes sequentially $1 first input $2 is the second input and so on 
-echo $1 $2 $3 
-
-echo $0 # this will print out what ever input you used to run the script or command
-
-args=("$@") # an array for unlimited number of input
-args=("$@3")# 3 input limit and so on
-
-echo ${args[0]} ${args[1]} ${args[2]} # printing them out by index
-
-echo $@ # to print out all the inputs 
-echo $# # to print out length of the array
-
 # if else
 if [ "contions to evaluate" ]
 then 
