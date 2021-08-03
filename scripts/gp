@@ -75,7 +75,7 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
     if [ -z "$(git status --short)" ]; then
        git-clean
     else
-      message="'$*'"
+      message="$*"
       git-publish "$message"
     exit
     fi 
