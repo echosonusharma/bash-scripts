@@ -51,8 +51,7 @@ git-publish(){
     echo -e "${yellow}-- Git Status --${reset}"
     git status
     adding-files
-    git add .
-    git commit -m "$1"
+    git commit -am "$1"
     git push
     published
 
