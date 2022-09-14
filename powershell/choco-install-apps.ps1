@@ -1,4 +1,3 @@
-
 ## make sure to update your system if you had a fresh OS installed
 ## to run the script run command - powershell -File <location of this file>
 ## To fix "cannot be loaded because running scripts is disabled on this system" (run: 'get-executionpolicy' returns: Restricted) -->
@@ -21,7 +20,7 @@ if(!$chocoIsInstalled) {
   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))      
 }
 
-$chocoList = choco list -lai
+$chocoList = choco list -lai # lists all the installed choco packages
   
 foreach ($PackageName in $Packages)
 {
