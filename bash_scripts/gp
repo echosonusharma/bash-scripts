@@ -17,9 +17,9 @@ gp-help(){
 
 # -e his tells echo to enable interpretation of escapes so that the color codes work
 status(){
-    echo -e "${red}-------------${reset}"
+    echo -e "${red}--------------${reset}"
     echo -e "${red}${bold}  Git Status  ${reset}"
-    echo -e "${red}-------------${reset}"
+    echo -e "${red}--------------${reset}"
 }
 
 published(){
