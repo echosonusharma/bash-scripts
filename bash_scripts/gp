@@ -16,6 +16,12 @@ gp-help(){
 }
 
 # -e his tells echo to enable interpretation of escapes so that the color codes work
+status(){
+    echo -e "${red}-------------${reset}"
+    echo -e "${red}${bold}  Git Status  ${reset}"
+    echo -e "${red}-------------${reset}"
+}
+
 published(){
     echo -e "${green}-------------${reset}"
     echo -e "${green}${bold}  Published  ${reset}"
@@ -48,10 +54,11 @@ git-clean(){
 
 
 git-publish(){
-    echo -e "${yellow}-- Git Status --${reset}"
+    status
     git status
     adding-files
-    git commit -am "$1"
+    git add .
+    git commit -m "$1"
     git push
     published
 
