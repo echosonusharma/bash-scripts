@@ -10,7 +10,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 $Packages = @('brave','googlechrome','mysql.workbench','mysql','mysql-cli','mongodb','mongodb-shell','mongodb-compass','pgadmin4','postgresql','wsl2','discord.install','microsoft-windows-terminal','postman',
 'vscode','docker-desktop','docker-cli','git.install','gimp','kdenlive','gh','nvm','nodejs','vlc','rust','golang','visualstudio-installer','steam-client','figma','obs-studio.install','qbittorrent','7zip',
-'warp','clementine','libreoffice-fresh','yarn','virtualbox', 'starship', 'crystaldiskinfo')
+'warp','clementine','libreoffice-fresh','yarn','virtualbox', 'starship', 'crystaldiskinfo', 'mingw', 'fiddler')
 
 $chocoIsInstalled = Test-Path -Path "$env:ProgramData\Chocolatey" # Get-Command choco.exe -ErrorAction SilentlyContinue
  
