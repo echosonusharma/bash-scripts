@@ -14,7 +14,7 @@ $Packages = @('brave','googlechrome','mysql.workbench','mysql','mysql-cli','mong
 'vscode','docker-desktop','docker-cli','git.install','gimp','kdenlive','gh','nvm','nodejs','vlc','rust',
 'golang','visualstudio-installer','steam-client','figma','obs-studio.install','qbittorrent','7zip',
 'warp','clementine','libreoffice-fresh','yarn','virtualbox', 'starship', 'crystaldiskinfo', 'mingw', 
-'fiddler', 'webp', 'responsively', 'insomnia-rest-api-client')
+'fiddler', 'webp', 'insomnia-rest-api-client')
 
 $chocoIsInstalled = Test-Path -Path "$env:ProgramData\Chocolatey" # Get-Command choco.exe -ErrorAction SilentlyContinue
  
